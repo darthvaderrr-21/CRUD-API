@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const User = require('../models/userModel');
+const bcrypt = require('bcrypt')
 
 //Post Method
 router.post('/post', async (req, res) => {
@@ -9,6 +10,7 @@ router.post('/post', async (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
+    console.log(newUser)
 
     // Password hashing......
     
